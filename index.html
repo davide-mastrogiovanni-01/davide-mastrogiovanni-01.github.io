@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Parola del Giorno</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <p id="frase"></p>
+</div>
+
+<script>
+  const frasi = [
+    "«Il Signore è il mio pastore: non manco di nulla.» (Salmo 23,1)",
+    "«Chiedete e vi sarà dato, cercate e troverete, bussate e vi sarà aperto. 8Perché chiunque chiede riceve, e chi cerca trova, e a chi bussa sarà aperto. » (Matteo 7,7)",
+    "«Io sono la via, la verità e la vita.» (Giovanni 14,6)",
+    "«Nulla è impossibile a Dio.» (Luca 1,37)",
+    "«Venite a me, voi tutti che siete stanchi e oppressi, e io vi darò ristoro.» (Matteo 11,28)"
+  ];
+
+  const fraseCasuale = frasi[Math.floor(Math.random() * frasi.length)];
+  document.getElementById("frase").innerText = fraseCasuale;
+</script>
+
+</body>
+</html>
