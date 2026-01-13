@@ -2,45 +2,58 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Parola del Giorno</title>
+  <title>Parola</title>
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: sans-serif;
-      background: #f4f4f4;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
     }
-    .box {
-      background: white;
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.85);
       padding: 30px;
-      border-radius: 12px;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .frase {
+      font-size: 1.4em;
+      color: #4a3f35;
+      line-height: 1.6;
     }
   </style>
 </head>
+
 <body>
+  <div class="overlay">
+    <p class="frase" id="frase"></p>
+  </div>
 
-<div class="box">
-  <p id="frase"></p>
-</div>
-
-<script>
-  const frasi = [
+  <script>
+    const frasi = [
     "«Il Signore è il mio pastore: non manco di nulla.» (Salmo 23,1)",
-    "«Chiedete e vi sarà dato, cercate e troverete, bussate e vi sarà aperto. 8Perché chiunque chiede riceve, e chi cerca trova, e a chi bussa sarà aperto. » (Matteo 7,7)",
-    "«Io sono la via, la verità e la vita.» (Giovanni 14,6)",
+    "«Chiedete e vi sarà dato, cercate e troverete, bussate e vi sarà aperto. Perché chiunque chiede riceve, e chi cerca trova, e a chi bussa sarà aperto. » (Matteo 7,7)",
+    "«Gli disse Gesù: "Io sono la via, la verità e la vita. Nessuno viene al Padre se non per mezzo di me. » (Giovanni 14,6)",
     "«Nulla è impossibile a Dio.» (Luca 1,37)",
     "«Venite a me, voi tutti che siete stanchi e oppressi, e io vi darò ristoro.» (Matteo 11,28)"
-  ];
+    ];
 
-  const fraseCasuale = frasi[Math.floor(Math.random() * frasi.length)];
-  document.getElementById("frase").innerText = fraseCasuale;
-</script>
-
+    const fraseCasuale = frasi[Math.floor(Math.random() * frasi.length)];
+    document.getElementById("frase").innerText = fraseCasuale;
+  </script>
 </body>
 </html>
